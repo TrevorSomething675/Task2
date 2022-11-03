@@ -19,9 +19,16 @@
         public override double GetArea()
         {
             double P = Side1 + Side2 + Side3 / 2;
-            return Math.Sqrt(
-                P * (P - Side1) * (P - Side2) * (P - Side3)
-                );
+            try
+            {
+                return Math.Sqrt(
+                    P * (P - Side1) * (P - Side2) * (P - Side3)
+                    );
+            }
+            catch
+            {
+                return -1;
+            }
         }
         public override void GetInfo()
         {
